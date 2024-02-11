@@ -39,6 +39,7 @@ switch(args[0]){
         minifyFile(args)
     break;
     default:
+        clearConsole()
         msg.error(`Error: Comando no encontrado - Revisa el comando ingresado, si deseas ver los comandos disponibles puedes ejecutar nova -h o nova -help`);
     break;
 }

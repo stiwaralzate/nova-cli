@@ -9,11 +9,11 @@ export const commands  = {
     },
     "-l" : {
         description: "Lista todos los paquetes o utilidades disponibles",
-        subcommands: ['tool', 'plugin', 'template'],
+        subcommands: ['tools', 'plugins', 'templates'],
     },
     "-list" : {
         description: "Lista todos los paquetes o utilidades disponibles",
-        subcommands: ['tool', 'plugin', 'template'],
+        subcommands: ['tools', 'plugins', 'templates'],
     },
     "-h" : {
         description: "Lista todos los comandos disponibles a ejecutar de primera linea",

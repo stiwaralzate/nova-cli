@@ -8,6 +8,14 @@ import createTable from './utils/tableGenerator.js'
 import minifyFile from './core/minifyFile.js'
 
 const [,,...args] = process.argv
+const CATEGORY = args[1]
+const subcommands = commands[args[0]]?.subcommands
+
+if(!Array.isArray(args) || args.length === 0){
+    clearConsole()
+    msg.welcome()
+    process.exit(1)
+}
 
 
 if(!Object.keys(commands).includes(args[0])){
@@ -18,25 +26,27 @@ if(!Object.keys(commands).includes(args[0])){
 switch(args[0]){
     case '-l':
     case '-list':
-        const CATEGORY = args[1]
 
-        if(!CATEGORY){
-            msg.error(`Error: Indica la categoria`);
+        if(!CATEGORY || (subcommands && !subcommands.includes(CATEGORY))){
+            msg.error(`Error: Indica una categoría valida`);
             process.exit(1)
         }
 
         clearConsole()
         msg.info(`Listado de comandos para ${CATEGORY} \n`)
-        createTable(['comando', 'descripcion'], [['-l | -list', 'lorem'], ['-h | -help', 'help']])
+        createTable(['Herramienta', 'Descripción'], [['fetch', 'TODO realizar fetch del listado de herramientas']])
     break;
     case '-h':
     case '-help':
         clearConsole()
         msg.info(`Listado de ayuda \n`)
-        createTable(['comando', 'descripcion'], [['-l | -list', 'lorem'], ['-h | -help', 'help']])
+        createTable(['Comando', 'Descripción'], [['-l | -list', 'lorem'], ['-h | -help', 'help']])
     break;
     case '-m':
         minifyFile(args)
+    break;
+    case 'create':
+        init()
     break;
     default:
         clearConsole()

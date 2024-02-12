@@ -11,7 +11,7 @@ import msg from './customLog.js'
 const createTable = (heads, values)=>{
     const table = new Table({
         head: heads,
-        colWidths: [20, 40]
+        colWidths: [20, 80],
     })
     
     values.forEach(val => {

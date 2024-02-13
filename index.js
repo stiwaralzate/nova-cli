@@ -6,6 +6,7 @@ import msg from './utils/customLog.js'
 import { commands } from './core/commandsList.js'
 import createTable from './utils/tableGenerator.js'
 import minifyFile from './core/minifyFile.js'
+import importTool from './core/importTool.js'
 
 const [,,...args] = process.argv
 const CATEGORY = args[1]
@@ -44,6 +45,9 @@ switch(args[0]){
     break;
     case '-m':
         minifyFile(args)
+    break;
+    case 'add':
+        importTool()
     break;
     case 'create':
         init()

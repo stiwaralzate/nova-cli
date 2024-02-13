@@ -25,6 +25,10 @@ export const commands  = {
     },
     "create" : {
         description: "Extrae utilidades o paquetes",
-        subcommands: ['tool', 'plugin', 'template'],
+        subcommands: ['plugin', 'template'],
     },
+    "add" : {
+        description: "Importa las herramientas creadas en el repo",
+        subcommands: false,
+    }
 }

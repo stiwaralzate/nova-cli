@@ -9,11 +9,11 @@ export const commands  = {
     },
     "-l" : {
         description: "Lista todos los paquetes o utilidades disponibles",
-        subcommands: ['tool', 'plugin', 'template'],
+        subcommands: ['tools', 'plugins', 'templates'],
     },
     "-list" : {
         description: "Lista todos los paquetes o utilidades disponibles",
-        subcommands: ['tool', 'plugin', 'template'],
+        subcommands: ['tools', 'plugins', 'templates'],
     },
     "-h" : {
         description: "Lista todos los comandos disponibles a ejecutar de primera linea",
@@ -25,6 +25,10 @@ export const commands  = {
     },
     "create" : {
         description: "Extrae utilidades o paquetes",
-        subcommands: ['tool', 'plugin', 'template'],
+        subcommands: ['plugin', 'template'],
     },
+    "add" : {
+        description: "Importa las herramientas creadas en el repo",
+        subcommands: false,
+    }
 }

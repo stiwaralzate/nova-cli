@@ -11,7 +11,7 @@ Para usar Nova CLI Dev, sigue estos pasos:
 Clona este repositorio a tu máquina local usando:
 bash
 Copy code
-git clone https://tu-repositorio-aqui.git
+git clone (https://github.com/stiwaralzate/nova-cli/)
 cd nova-cli-dev
 Instala las dependencias del proyecto:
 bash

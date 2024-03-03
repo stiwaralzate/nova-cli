@@ -7,6 +7,7 @@ import { commands } from './core/commandsList.js'
 import createTable from './utils/tableGenerator.js'
 import minifyFile from './core/minifyFile.js'
 import importTool from './core/importTool.js'
+import compileSass from './core/CompileSass.js'
 
 const [,,...args] = process.argv
 const CATEGORY = args[1]
@@ -28,13 +29,13 @@ switch(args[0]){
     case '-l':
     case '-list':
 
-        if(!CATEGORY || (subcommands && !subcommands.includes(CATEGORY))){
-            msg.error(`Error: Indica una categoría valida`);
-            process.exit(1)
-        }
+        // if(!CATEGORY || (subcommands && !subcommands.includes(CATEGORY))){
+        //     msg.error(`Error: Indica una categoría valida`);
+        //     process.exit(1)
+        // }
 
         clearConsole()
-        msg.info(`Listado de comandos para ${CATEGORY} \n`)
+        // msg.info(`Listado de comandos para ${CATEGORY} \n`)
         createTable(['Herramienta', 'Descripción'], [['fetch', 'TODO realizar fetch del listado de herramientas']])
     break;
     case '-h':
@@ -46,11 +47,15 @@ switch(args[0]){
     case '-m':
         minifyFile(args)
     break;
-    case 'add':
+    case 'use':
         importTool()
     break;
     case 'create':
         init()
+    break;
+    case '-cs':
+        msg.info(` Compilando...`)
+        compileSass(args)
     break;
     default:
         clearConsole()

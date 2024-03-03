@@ -27,8 +27,12 @@ export const commands  = {
         description: "Extrae utilidades o paquetes",
         subcommands: ['plugin', 'template'],
     },
-    "add" : {
+    "use" : {
         description: "Importa las herramientas creadas en el repo",
+        subcommands: false,
+    },
+    "-cs" : {
+        description: "Compila los archivos sass",
         subcommands: false,
     }
 }

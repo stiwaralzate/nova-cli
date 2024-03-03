@@ -1,4 +1,3 @@
-import {exec}  from 'node:child_process'
 import path from 'node:path'
 import fs from 'node:fs/promises';
 import msg from '../utils/customLog.js'

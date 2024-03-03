@@ -28,20 +28,19 @@ if(!Object.keys(commands).includes(args[0])){
 switch(args[0]){
     case '-l':
     case '-list':
-
-        // if(!CATEGORY || (subcommands && !subcommands.includes(CATEGORY))){
-        //     msg.error(`Error: Indica una categoría valida`);
-        //     process.exit(1)
-        // }
+        if(!CATEGORY || (subcommands && !subcommands.includes(CATEGORY))){
+            msg.error(`Error: Indica una categoría valida`);
+            process.exit(1)
+        }
 
         clearConsole()
-        // msg.info(`Listado de comandos para ${CATEGORY} \n`)
+        msg.info(` Listado de comandos para ${CATEGORY} \n`)
         createTable(['Herramienta', 'Descripción'], [['fetch', 'TODO realizar fetch del listado de herramientas']])
     break;
     case '-h':
     case '-help':
         clearConsole()
-        msg.info(`Listado de ayuda \n`)
+        msg.info(` Listado de ayuda \n`)
         createTable(['Comando', 'Descripción'], [['-l | -list', 'lorem'], ['-h | -help', 'help']])
     break;
     case '-m':
@@ -54,7 +53,6 @@ switch(args[0]){
         init()
     break;
     case '-cs':
-        msg.info(` Compilando...`)
         compileSass(args)
     break;
     default:

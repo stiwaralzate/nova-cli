@@ -19,10 +19,12 @@ const minifyFile = async (args) => {
     
     if(filePath === '-js'){
         minifyAllScripts(destPath)
+        return;
     }
 
     if(filePath === '-css'){
         minifyAllCss(destPath)
+        return;
     }
     
     const file = path.parse(filePath);

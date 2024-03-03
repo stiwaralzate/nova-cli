@@ -31,7 +31,7 @@ export const commands  = {
         description: "Importa las herramientas creadas en el repo",
         subcommands: false,
     },
-    "-cs" : {
+    "-c" : {
         description: "Compila los archivos sass",
         subcommands: false,
     }

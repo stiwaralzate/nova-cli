@@ -52,7 +52,7 @@ switch(args[0]){
     case 'create':
         init()
     break;
-    case '-cs':
+    case '-c':
         compileSass(args)
     break;
     default:

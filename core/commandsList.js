@@ -34,5 +34,9 @@ export const commands  = {
     "-c" : {
         description: "Compila los archivos sass",
         subcommands: false,
-    }
+    },
+    "-webp" : {
+        description: "Convierte una imagen a archivo .webp",
+        subcommands: false,
+    },
 }

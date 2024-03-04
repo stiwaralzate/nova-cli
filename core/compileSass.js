@@ -11,7 +11,7 @@ import * as sass from 'sass'
 const compileSass = async (args)=>{
     const [, filePath, destPath] = args;
     if(!filePath){
-        msg.error(` Error: Indica el archivo a compilar`)
+        msg.error(`Error: Indica el archivo a compilar`)
         process.exit(1)
     }
 
@@ -23,10 +23,10 @@ const compileSass = async (args)=>{
         
         if(response?.css){
             await fs.writeFile(dest, response.css)
-            msg.success(` El archivo ${name+ext} ha sido compilado con éxito en ${dest}`)
+            msg.success(`El archivo ${name+ext} ha sido compilado con éxito en ${dest}`)
         }
     } catch (error) {
-        msg.error(` Error en el proceso ${error}`)
+        msg.error(`Error en el proceso ${error}`)
     }
 }
 

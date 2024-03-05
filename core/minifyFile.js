@@ -1,6 +1,7 @@
-import { exec } from 'node:child_process'
+import fs from 'node:fs/promises';
 import path from 'node:path'
 import msg from '../utils/customLog.js';
+import { minify } from 'minify';
 
 /**
  * 
@@ -19,18 +20,13 @@ const minifyFile = async (args) => {
         const file = path.parse(filePath);
         const { ext, name } = file
         const dest = (destPath) ? `${destPath}/${name}.min${ext}` : `${name}.min${ext}`
-        const script = `minify ${filePath} > ${dest}`
-        exec(script, (error, stdout, stderr) => {
-            if (error) {
-                msg.error(` Error al ejecutar el comando: ${error.message}`);
-                process.exit(1);
-            }
-            if (stderr) {
-                msg.error(` Error en la salida estándar: ${stderr}`);
-                process.exit(1);
-            }
-            msg.success(` Archivo ${name}${ext} minificado correctamente en ${dest}`)
-        });
+        const response = await minify(filePath)
+        
+        if(response){
+            await fs.writeFile(dest, response)
+            msg.success(`El archivo ${name+ext} ha sido compilado con éxito en ${dest}`)
+        }
+        
     } catch (error) {
         msg.error(` Error: ${error}`)
     }
